@@ -525,3 +525,88 @@ const ITERATE_THROUGH_THE_KEYS_OF_AN_OBJECT_WITH_FOR_IN_LOOP = () => {
   console.log(countOnline(users));
 };
 ITERATE_THROUGH_THE_KEYS_OF_AN_OBJECT_WITH_FOR_IN_LOOP();
+
+const GENERATE_AN_ARRAY_OF_ALL_OBJECT_KEYS_WITH_OBJECTKEY_METHOD = () => {
+  //can generate an array which contains all the keys stored in an object using Object.keys() method
+  //this method takes an object as an argument and returns an array of strings representing ecah prop in the object
+  //REMEMBER: there's no specific order to the entries in the array
+
+  //return statement stops the execution of a function and returns a value
+  let users = {
+    Alan: {
+      age: 27,
+      online: false,
+    },
+    Jeff: {
+      age: 32,
+      online: true,
+    },
+    Sarah: {
+      age: 48,
+      online: false,
+    },
+    Ryan: {
+      age: 19,
+      online: true,
+    },
+  };
+
+  function getArrayOfUsers(obj) {
+    // Only change code below this line
+    return Object.keys(obj);
+    // Only change code above this line
+  }
+
+  console.log(getArrayOfUsers(users));
+};
+GENERATE_AN_ARRAY_OF_ALL_OBJECT_KEYS_WITH_OBJECTKEY_METHOD();
+
+const MODIFY_AN_ARRAY_STORED_IN_AN_OBJECT = () => {
+  //For objects you should know by now how to ....
+  // - add
+  // - modify
+  // - remove key-value pairs
+  // - check if a key exists
+  // - iterate over all the keys in an object
+
+  ////user contains 3 keys
+  ////data which is one of the three keys has 5 keys
+  ////friends is the key and it's value pair is an array containing strings as elements(people's names)
+
+  ////finish the addFriend function: must satisfy these conditions
+  ////takes "user" object and adds the name of the "friend" argument to the  array stored in user.data.friends and returns that array
+  let user = {
+    name: "Kenneth",
+    age: 28,
+    data: {
+      username: "kennethCodesAllDay",
+      joinDate: "March 26, 2016",
+      organization: "freeCodeCamp",
+      friends: ["Sam", "Kira", "Tomo"],
+      location: {
+        city: "San Francisco",
+        state: "CA",
+        country: "USA",
+      },
+    },
+  };
+
+  function addFriend(userObj, friend) {
+    // Only change code below this line
+
+    ///let's try...
+    ///using .push(friend) to add that value when returns with friend argument which is pete in this case
+
+    //init variable to store the target which is the friend's key
+    let targetKey = userObj.data.friends;
+
+    targetKey.push(friend);
+    console.log(targetKey);
+    return targetKey;
+
+    // Only change code above this line
+  }
+
+  console.log(addFriend(user, "Pete"));
+};
+MODIFY_AN_ARRAY_STORED_IN_AN_OBJECT();
